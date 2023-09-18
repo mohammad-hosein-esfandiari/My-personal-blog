@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    background-color: black;
+}
 .flipped .front,
 .flipped .back{
     transform: rotateY(-180deg);
@@ -13,7 +16,7 @@
 
 .front{
     backface-visibility: hidden;
-    border-left: 3px solid #66b4df;
+    border-left: 3px solid black
 }
 .back-content{
     transform: rotateY(180deg);

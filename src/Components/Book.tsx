@@ -20,7 +20,7 @@ export const Book: React.FC<PapersProps> = ({
         " translate-x-[50%]"
       } ${
         currentLocation === papers.length && "translate-x-[100%]"
-      }  relative transition-transform duration-500 w-[350px] h-[500px]`}>
+      }  relative transition-transform duration-500 w-[600px] h-[700px]`}>
       {papers.map((item, index) => (
         <Paper
           currentLocation={currentLocation}

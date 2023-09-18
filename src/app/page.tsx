@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import { Book } from "@/Components/Book";
 import { BiSolidRightArrow, BiSolidLeftArrow } from "react-icons/bi";
+import { RightBtn } from "@/Components/RightBtn";
+import { LeftBtn } from "@/Components/LeftBtn";
 
 export default function Home() {
   const [currentLocation, setCurrentLocation] = useState(0);
@@ -12,7 +14,6 @@ export default function Home() {
     if (currentLocation < data.length) {
       currentLocation === 1 && setIsOpenBook("open");
       currentLocation === data.length && setIsOpenBook("close");
-
       setCurrentLocation((prev) => prev + 1);
     }
   };
@@ -22,32 +23,23 @@ export default function Home() {
       setCurrentLocation((prev) => prev - 1);
     }
   };
-  console.log(currentLocation);
   return (
-    <div className=" w-screen h-screen flex justify-center items-center bg-[#66b4df]">
-      <button
-        onClick={goPrevPage}
-        className={`${
-          currentLocation < data.length &&
-          currentLocation !== 0 &&
-          "translate-x-[-520%]"
-        } m-2 hover:scale-[1.1] transition-transform duration-500 shadow-md p-2 text-lg rounded-md bg-slate-400 text-white`}>
-        <BiSolidLeftArrow />
-      </button>
+    <div className=" w-screen overflow-hidden h-screen flex justify-center items-center">
+      <LeftBtn
+        currentLocation={currentLocation}
+        data={data}
+        handlePage={goPrevPage}
+      />
       <Book
         isOpenBook={isOpenBook}
         papers={data}
         currentLocation={currentLocation}
       />
-      <button
-        onClick={goNextPage}
-        className={`${
-          currentLocation >= 1 &&
-          currentLocation !== data.length &&
-          "translate-x-[520%]"
-        } m-2 hover:scale-[1.1] transition-transform duration-500 shadow-md p-2 text-lg rounded-md bg-slate-400 text-white`}>
-        <BiSolidRightArrow />
-      </button>
+      <RightBtn
+        currentLocation={currentLocation}
+        data={data}
+        handlePage={goNextPage}
+      />
     </div>
   );
 }
