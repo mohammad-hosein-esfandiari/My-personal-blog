@@ -9,6 +9,7 @@ export const Paper: React.FC<PaperProps> = ({
   paperLength,
   currentLocation,
 }): JSX.Element => {
+
   return (
     <>
       <div

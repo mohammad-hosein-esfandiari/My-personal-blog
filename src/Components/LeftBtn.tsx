@@ -1,3 +1,4 @@
+'use client'
 import { BtnProps } from '@/types/book.types'
 import React, { FC } from 'react'
 import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi'

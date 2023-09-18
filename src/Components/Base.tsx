@@ -2,9 +2,12 @@
 import { Book } from '@/Components/Book';
 import { LeftBtn } from '@/Components/LeftBtn';
 import { RightBtn } from '@/Components/RightBtn';
-import React,{useState} from 'react'
+import React,{FC, useState} from 'react'
 
-export default function Page() {
+
+
+const  Base:FC<any> =({params})=> {
+    console.log(params)
   const [currentLocation, setCurrentLocation] = useState(0);
   const [isOpenBook, setIsOpenBook] = useState<"open" | "close" | null>(null);
   const data = ["d", "s", "a", "dsc", "dscdsc"];
@@ -33,7 +36,9 @@ export default function Page() {
       isOpenBook={isOpenBook}
       papers={data}
       currentLocation={currentLocation}
-    />
+    >
+      
+      </Book>
     <RightBtn
       currentLocation={currentLocation}
       data={data}
@@ -42,3 +47,5 @@ export default function Page() {
   </div>
   )
 }
+
+export default Base

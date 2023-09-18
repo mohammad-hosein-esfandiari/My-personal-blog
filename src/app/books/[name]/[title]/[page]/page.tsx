@@ -4,13 +4,11 @@ import { LeftBtn } from '@/Components/LeftBtn';
 import { RightBtn } from '@/Components/RightBtn';
 import React,{FC, useState} from 'react'
 
-interface PageParams {
-  params:{name:string,title:string}
-  searchParams:{page:string}
-}
 
-const  Page:FC<PageParams> =({params,searchParams})=> {
-  const [currentLocation, setCurrentLocation] = useState(0);
+
+const  BookPage:FC<any> =({params})=> {
+  console.log(params)
+  const [currentLocation, setCurrentLocation] = useState(Number(params.page));
   const [isOpenBook, setIsOpenBook] = useState<"open" | "close" | null>(null);
   const data = ["d", "s", "a", "dsc", "dscdsc"];
 
@@ -38,7 +36,9 @@ const  Page:FC<PageParams> =({params,searchParams})=> {
       isOpenBook={isOpenBook}
       papers={data}
       currentLocation={currentLocation}
-    />
+    >
+      
+      </Book>
     <RightBtn
       currentLocation={currentLocation}
       data={data}
@@ -48,4 +48,4 @@ const  Page:FC<PageParams> =({params,searchParams})=> {
   )
 }
 
-export default Page
+export default BookPage
