@@ -1,10 +1,34 @@
-import { Paper } from "./Paper"
+import { Paper } from "./Paper";
 
-
-export const Book:React.FC = ():JSX.Element => {
-  return (
-    <div id="book" className="book  relative w-[350px] h-[500px]">
-        <Paper/>
-    </div>
-  )
+interface PapersProps {
+  papers: any[];
+  currentLocation: number;
+  isOpenBook: "close" | "open" | null;
 }
+
+export const Book: React.FC<PapersProps> = ({
+  papers,
+  currentLocation,
+  isOpenBook,
+}): JSX.Element => {
+  return (
+    <div
+      id="book"
+      className={`book ${
+        currentLocation >= 1 &&
+        currentLocation !== papers.length &&
+        " translate-x-[50%]"
+      } ${
+        currentLocation === papers.length && "translate-x-[100%]"
+      }  relative transition-transform duration-500 w-[350px] h-[500px]`}>
+      {papers.map((item, index) => (
+        <Paper
+          currentLocation={currentLocation}
+          key={item}
+          paperLength={papers.length}
+          index={index}
+        />
+      ))}
+    </div>
+  );
+};
