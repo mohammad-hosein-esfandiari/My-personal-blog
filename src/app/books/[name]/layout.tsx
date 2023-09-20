@@ -6,6 +6,7 @@ interface PageParams {
   children: React.ReactNode;
 }
 const NameLayout: FC<PageParams> = ({ params, searchParams, children }) => {
+ 
   return <div>{children}</div>;
 };
 export default NameLayout;

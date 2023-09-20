@@ -3,11 +3,15 @@ interface PaperProps {
   index: number;
   paperLength: number;
   currentLocation: number;
+  front:any,
+  back:any
 }
 export const Paper: React.FC<PaperProps> = ({
   index,
   paperLength,
   currentLocation,
+  back,
+  front
 }): JSX.Element => {
 
   return (
@@ -25,14 +29,14 @@ export const Paper: React.FC<PaperProps> = ({
           <div
             id={"f" + (index + 1)}
             className="front-content  w-full h-full flex justify-center items-center">
-            <h1 className="font-bold text-2xl">Front-{index + 1}</h1>
+            <h1 className="font-bold text-2xl">Front-{front}</h1>
           </div>
         </div>
         <div className="back origin-left transition-all duration-500 z-[0] bg-white absolute w-full h-full top-0 left-0 ">
           <div
             id={"b" + (index + 1)}
             className="back-content w-full h-full flex justify-center items-center">
-            <h1 className="font-bold text-2xl">Back-{index + 1}</h1>
+            <h1 className="font-bold text-2xl">Back-{back}</h1>
           </div>
         </div>
       </div>
