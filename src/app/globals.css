@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: black;
+}
+.flipped .front,
+.flipped .back{
+    transform: rotateY(-180deg);
+}
+
+.paper{
+    perspective: 1500px;
+}
+
+.front{
+    backface-visibility: hidden;
+    border-left: 3px solid black
+}
+.back-content{
+    transform: rotateY(180deg);
+}
