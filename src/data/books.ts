@@ -1,28 +1,79 @@
-export const books = [
-  {
-    id: 1,
-    name: "react",
-    pages: ["1", "2"],
-  },
+
+export const books:any[] = [
   {
     id: 1,
     name: "next",
-    pages: [
+    headlines: [
       {
         id: 1,
-        title: "menu",
-        pages: ['lifeCycle','props'],
+        headline: "lifeCycle",
+        pages:[
+          {
+            id:'lifeCycle-'+1,
+            front:"hi",
+            back:"by"
+          },
+          {
+            id:'lifeCycle-'+1,
+            front:"hi",
+            back:"by"
+          },
+          {
+            id:'lifeCycle-'+1,
+            front:"hi",
+            back:"by"
+          },
+        ]
+        
+      },
+      {
+        id: 1,
+        headline: "blue",
+        pages:[
+          {
+            id:'lifeCycle-'+1,
+            front:"hiiiiiiiiii",
+            back:"byiiiiiiii"
+          }
+        ]
+        
+      },
+      {
+        id: 1,
+        headline: "lifeCycle",
+        pages:[
+          {
+            id:'lifeCycle-'+1,
+            front:"hi",
+            back:"by"
+          }
+        ]
+        
+      },
+      {
+        id: 1,
+        headline: "lifeCycle",
+        pages:[
+          {
+            id:'lifeCycle-'+1,
+            front:"hi",
+            back:"by"
+          }
+        ]
+        
+      },
+      {
+        id: 1,
+        headline: "lifeCycle",
+        pages:[
+          {
+            id:'lifeCycle-'+1,
+            front:"hi",
+            back:"by"
+          }
+        ]
+        
       },
     ],
-  },
-  {
-    id: 1,
-    name: "javascript",
-    pages: ["1", "2"],
-  },
-  {
-    id: 1,
-    name: "tailwind",
-    pages: ["1", "2"],
   },
 ];
