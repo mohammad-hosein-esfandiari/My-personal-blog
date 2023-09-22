@@ -1,4 +1,4 @@
-
+import { Template } from "@/papers/template"
 export const books:any[] = [
   {
     id: 1,
@@ -11,17 +11,17 @@ export const books:any[] = [
         pages:[
           {
             id:'lifeCycle-'+1,
-            front:"1",
+            front:Template,
             back:"2"
           },
           {
             id:'lifeCycle-'+1,
-            front:"3",
+            front:Template,
             back:"4"
           },
           {
             id:'lifeCycle-'+1,
-            front:"5",
+            front:Template,
             back:"6"
           },
         ]

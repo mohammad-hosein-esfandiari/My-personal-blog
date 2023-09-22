@@ -14,8 +14,8 @@ export const RightBtn:FC<BtnProps> = ({currentLocation,bookLength,handlePage}) =
       currentLocation < bookLength &&
       currentLocation !== 0 &&
       "translate-x-[880%]"
-    } m-2  transition-transform duration-500 shadow-md p-2 text-lg rounded-md bg-slate-400 text-white`}>
-    <BiSolidRightArrow />
+    } m-2  transition-transform duration-500 rounded-md p-2 text-lg border-[#a8a8a845] border-[1px] text-white`}>
+    <BiSolidRightArrow className="hover:scale-[1.5] transition-all duration-300" />
   </button>
   )
 }
