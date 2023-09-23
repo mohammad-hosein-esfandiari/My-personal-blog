@@ -2,9 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: IRANSans;
+    src: url("./../assets/fonts/IRANSans/IRANSans.ttf");
+  }
+
+.persian{
+    font-family: IRANSans;
+}
+
 body{
     background-color: black;
 }
+
 .flipped .front,
 .flipped .back{
     transform: rotateY(-180deg);

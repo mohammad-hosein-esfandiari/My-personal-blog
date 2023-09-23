@@ -3,12 +3,20 @@ interface PaperProps {
   index: number;
   paperLength: number;
   currentLocation: number;
+  front:any,
+  back:any
 }
 export const Paper: React.FC<PaperProps> = ({
   index,
   paperLength,
   currentLocation,
+  back,
+  front
 }): JSX.Element => {
+
+  const RenderComponent = () => {
+    return React.createElement(front);
+  };
 
   return (
     <>
@@ -21,18 +29,18 @@ export const Paper: React.FC<PaperProps> = ({
         className={` paper absolute w-[100%] h-full top-0 left-0 ${
           index + 1 <= currentLocation ? `flipped` : ``
         }`}>
-        <div className="front origin-left transition-all duration-500 z-[1] bg-white absolute w-full h-full top-0 left-0 ">
+        <div className="front origin-left   transition-all duration-500 z-[1]  rounded-r-md bg-[#d2c7b3] absolute w-full h-full top-0 left-0 ">
           <div
             id={"f" + (index + 1)}
             className="front-content  w-full h-full flex justify-center items-center">
-            <h1 className="font-bold text-2xl">Front-{index + 1}</h1>
+            <RenderComponent/>
           </div>
         </div>
-        <div className="back origin-left transition-all duration-500 z-[0] bg-white absolute w-full h-full top-0 left-0 ">
+        <div className="back origin-left  border-l-0 transition-all duration-500 z-[0] rounded-r-md bg-[#d2c7b3] absolute w-full h-full top-0 left-0 ">
           <div
             id={"b" + (index + 1)}
             className="back-content w-full h-full flex justify-center items-center">
-            <h1 className="font-bold text-2xl">Back-{index + 1}</h1>
+            <h1 className="font-bold text-2xl">Back-{back}</h1>
           </div>
         </div>
       </div>

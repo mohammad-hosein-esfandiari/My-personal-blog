@@ -1,45 +1,25 @@
-"use client";
-import { useEffect, useState } from "react";
-import { Book } from "@/Components/Book";
-import { BiSolidRightArrow, BiSolidLeftArrow } from "react-icons/bi";
-import { RightBtn } from "@/Components/RightBtn";
-import { LeftBtn } from "@/Components/LeftBtn";
+import { english } from "@/lang/lang";
+import { useLang } from "@/store/lang";
+import Link from "next/link";
+import React from "react";
 
-export default function Home() {
-  const [currentLocation, setCurrentLocation] = useState(0);
-  const [isOpenBook, setIsOpenBook] = useState<"open" | "close" | null>(null);
-  const data = ["d", "s", "a", "dsc", "dscdsc"];
-
-  const goNextPage = () => {
-    if (currentLocation < data.length) {
-      currentLocation === 1 && setIsOpenBook("open");
-      currentLocation === data.length && setIsOpenBook("close");
-      setCurrentLocation((prev) => prev + 1);
-    }
-  };
-
-  const goPrevPage = () => {
-    if (currentLocation > 0) {
-      setCurrentLocation((prev) => prev - 1);
-    }
-  };
+export default function Index() {
+  const lang = useLang.getState().langObj;
   return (
-    <div className=" w-screen overflow-hidden h-screen flex justify-center items-center">
-      <LeftBtn
-        currentLocation={currentLocation}
-        data={data}
-        handlePage={goPrevPage}
-      />
-      <Book
-        isOpenBook={isOpenBook}
-        papers={data}
-        currentLocation={currentLocation}
-      />
-      <RightBtn
-        currentLocation={currentLocation}
-        data={data}
-        handlePage={goNextPage}
-      />
+    <div className="w-screen h-screen flex items-center justify-center">
+      <div>
+        <h1 className=" border-[1px] mb-8 animate- border-[#a8a8a845] rounded-md text-8xl p-10 font-bold text-white">
+          {lang.home.welcome}
+          <span className="animate-pulse inline-block bg-[#a8a8a845] duration-1000 text-yellow-600 px-4 rounded-md">
+            {lang.home.notebook}
+          </span>
+        </h1>
+        <Link
+          href={`/books`}
+          className="border-[1px] hover:bg-[#a8a8a845] transition-all duration-300 p-4 border-[#a8a8a845] rounded-md text-blue-500">
+          Click to See All NoteBooks
+        </Link>
+      </div>
     </div>
   );
 }
