@@ -1,3 +1,4 @@
+'use client'
 import { Language } from '@/Components/Language'
 import './globals.css'
 import type { Metadata } from 'next'
@@ -17,10 +18,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const lang = useLang.getState().lang
+  const lang = useLang(state => state.lang)
   return (
-    <html dir={lang === "english" ? "ltr" : "rtl"} lang="en">
-      <body className={lang === LangEnum.EN ? english.className : "persian"}>
+    <html dir={lang === "english" ? "ltr" : "rtl"} >
+      <body style={{fontFamily:lang === LangEnum.PR ? "IRANSans" : ""}} className={lang === LangEnum.EN ? english.className : "persian transition-all duration-300"}>
         {children}
         <Language/>
         </body>

@@ -7,13 +7,15 @@ export enum LangEnum {
 export const persian = {
     home:{
         welcome:"خوش آمدید به بلاگ",
-        notebook:"شخصی من"
+        notebook:"شخصی من",
+        allNotebook:"برای دیدن همه ی دفتر ها کلیک کنید"
     }
 }
 
 export const english = {
     home:{
         welcome:"Welcome To My",
-        notebook:"NoteBook"
+        notebook:"NoteBook",
+        allNotebook:"Click To See All Notebooks"
     }
 }

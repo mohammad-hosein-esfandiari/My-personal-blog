@@ -6,9 +6,11 @@
     font-family: IRANSans;
     src: url("./../assets/fonts/IRANSans/IRANSans.ttf");
   }
-
+:root{
+    --persian:"IRANSans"
+}
 .persian{
-    font-family: IRANSans;
+    font-family: var(--persian);
 }
 
 body{

@@ -1,10 +1,11 @@
+'use client'
 import { english } from "@/lang/lang";
 import { useLang } from "@/store/lang";
 import Link from "next/link";
 import React from "react";
 
 export default function Index() {
-  const lang = useLang.getState().langObj;
+  const lang = useLang(state=>state.langObj)
   return (
     <div className="w-screen h-screen flex items-center justify-center">
       <div>
@@ -17,7 +18,7 @@ export default function Index() {
         <Link
           href={`/books`}
           className="border-[1px] hover:bg-[#a8a8a845] transition-all duration-300 p-4 border-[#a8a8a845] rounded-md text-blue-500">
-          Click to See All NoteBooks
+          {lang.home.allNotebook}
         </Link>
       </div>
     </div>
