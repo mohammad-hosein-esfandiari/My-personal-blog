@@ -1,10 +1,14 @@
-'use client'
+
 import { Language } from '@/Components/Language'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { useLang } from '@/store/lang'
 import { LangEnum } from '@/lang/lang'
+import {useLocale} from 'next-intl';
+import {notFound} from 'next/navigation';
+ 
+const locales = ['en', 'de'];
 
 const english = Inter({ subsets: ['latin'] })
 
@@ -14,14 +18,15 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  children,
+  children,params:{locale}
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,params:any
 }) {
-  const lang = useLang(state => state.lang)
+  const isValidLocale = locales.some((cur) => cur === locale);
+  if (!isValidLocale) notFound();
   return (
-    <html dir={lang === "english" ? "ltr" : "rtl"} >
-      <body style={{fontFamily:lang === LangEnum.PR ? "IRANSans" : ""}} className={lang === LangEnum.EN ? english.className : "persian transition-all duration-300"}>
+    <html  >
+      <body>
         {children}
         <Language/>
         </body>

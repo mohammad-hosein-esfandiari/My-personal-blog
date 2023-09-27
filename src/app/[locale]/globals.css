@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: IRANSans;
-    src: url("./../assets/fonts/IRANSans/IRANSans.ttf");
+    src: url("./../../assets/fonts/IRANSans/IRANSans.ttf");
   }
 :root{
     --persian:"IRANSans"

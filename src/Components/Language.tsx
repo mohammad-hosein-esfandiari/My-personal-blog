@@ -8,7 +8,7 @@ export const Language = () => {
   const setLang = useLang(state=>state.changeLang);
   const lang = useLang(state=>state.lang);
   return (
-    <div className="fixed border-[1px] border-[#a8a8a845]  right-5 bottom-5">
+    <div dir="ltr" className="fixed rounded-md overflow-hidden border-[1px] border-[#a8a8a845]  right-5 bottom-5">
       <ul className=" w-full h-full text-white flex">
         <li onClick={() => setLang(LangEnum.EN)} className={`p-2 w-[80px] text-center  ${lang === LangEnum.EN ? "bg-[#a8a8a845]" : "text-[#777]"} cursor-pointer`}>
           English

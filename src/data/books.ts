@@ -1,9 +1,10 @@
 import { Template } from "@/papers/template"
+import { useLang } from "@/store/lang"
 export const books:any[] = [
   {
     id: 1,
     name: "frontend_developers_needs_to_know",
-    title:"Everything That All Frontend Web Developers Needs To Know",
+    title:useLang.getState().langObj.books.allFrontendNeeds,
     headlines: [
       {
         id: 1,
@@ -33,18 +34,18 @@ export const books:any[] = [
         pages:[
           {
             id:'lifeCycle-'+1,
-            front:"7",
-            back:"8"
+            front:Template,
+            back:Template
           },
           {
             id:'lifeCycle-'+1,
-            front:"9",
-            back:"10"
+            front:Template,
+            back:Template
           },
           {
             id:'lifeCycle-'+1,
-            front:"11",
-            back:"12"
+            front:Template,
+            back:Template
           },
         ]
         
