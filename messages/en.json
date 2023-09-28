@@ -1,5 +1,10 @@
 {
-    "Index": {
-      "title": "Hello world!"
-    }
+  "Home": {
+    "welcome": "Welcome To My",
+    "notebook": "NoteBook",
+    "allNotebook": "Click To See All Notebooks"
+  },
+  "Books":{
+    "allFrontendNeeds":""
   }
+}
